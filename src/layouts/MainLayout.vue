@@ -6,7 +6,7 @@
 
         <q-toolbar-title class="text-weight-bold">
           <span class="gt-sm">
-            Twitter
+            {{ $route.name }}
           </span>
           <q-icon name="fa-brands fa-x-twitter" size="sm" class="header-icon q-pa-md lt-md" />
         </q-toolbar-title>
@@ -17,7 +17,7 @@
       <q-icon name="fa-brands fa-x-twitter" size="lg" class="q-pa-md" />
       <div class="q-pa-md" style="max-width: 350px">
         <q-list>
-          <q-item clickable v-ripple to="/">
+          <q-item clickable v-ripple to="/" exact>
             <q-item-section avatar>
               <q-icon name="home" size="md" />
             </q-item-section>
@@ -25,7 +25,7 @@
             <q-item-section class="text-h6 text-weight-bold">Home</q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="/about">
+          <q-item clickable v-ripple to="/about" exact>
             <q-item-section avatar>
               <q-icon name="help" size="md" />
             </q-item-section>
