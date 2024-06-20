@@ -4,7 +4,12 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title class="text-weight-bold"> Twitter </q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">
+          <span class="gt-sm">
+            Twitter
+          </span>
+          <q-icon name="fa-brands fa-x-twitter" size="sm" class="header-icon q-pa-md lt-md" />
+        </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -107,3 +112,10 @@ export default {
   },
 };
 </script>
+<style lang="sass">
+.header-icon
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translateX(-50%)
+</style>
