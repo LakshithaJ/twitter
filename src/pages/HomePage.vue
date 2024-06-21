@@ -19,8 +19,8 @@
 
     <q-separator size="10px" color="grey-2" class="divider" />
 
-    <q-list>
-      <q-item class="q-py-md">
+    <q-list separator>
+      <q-item class="q-py-md" v-for="tweet in tweets" :key="tweet.date">
         <q-item-section avatar top>
           <q-avatar size="xl">
             <img src="https://cdn.quasar.dev/img/avatar2.jpg">
@@ -31,11 +31,7 @@
           <q-item-label class="text-subtitle1"> <strong> Laksh J</strong> <span class="text-grey-7">@Laksh-j</span>
           </q-item-label>
           <q-item-label class="tweet-content text-body1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam nam aspernatur sed exercitationem
-            reprehenderit tempore error laboriosam dolores.
-
-            Nihil facilis exercitationem minima aperiam praesentium
-            quibusdam ipsum ipsam veniam sapiente?
+            {{ tweet.content }}
           </q-item-label>
           <div class="row justify-between q-mt-sm tweet-icons">
             <q-btn round flat color="grey" icon="far fa-comment" size="sm" />
@@ -46,7 +42,7 @@
         </q-item-section>
 
         <q-item-section side top>
-          1 min ago
+          {{ tweet.date }}
         </q-item-section>
       </q-item>
     </q-list>
@@ -54,11 +50,38 @@
 </template>
 
 <script setup lang="ts">
+import { formatDistance } from 'date-fns';
 defineOptions({
   name: 'HomePage',
   data() {
     return {
       newTweetContent: '',
+      tweets: [
+        {
+          content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam nam aspernatur sed exercitationem reprehenderit tempore error laboriosam dolores\. Nihil facilis exercitationem minima aperiam praesentium quibusdam ipsum ipsam veniam sapiente\?',
+          date: 1718989052826
+        },
+        {
+          content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam nam aspernatur sed exercitationem reprehenderit tempore error laboriosam dolores\. Nihil facilis exercitationem minima aperiam praesentium quibusdam ipsum ipsam veniam sapiente\?',
+          date: 1718989081520
+        },
+        {
+          content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam nam aspernatur sed exercitationem reprehenderit tempore error laboriosam dolores\. Nihil facilis exercitationem minima aperiam praesentium quibusdam ipsum ipsam veniam sapiente\?',
+          date: 1718989092762
+        },
+        {
+          content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam nam aspernatur sed exercitationem reprehenderit tempore error laboriosam dolores\. Nihil facilis exercitationem minima aperiam praesentium quibusdam ipsum ipsam veniam sapiente\?',
+          date: 1718989100833
+        },
+        {
+          content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam nam aspernatur sed exercitationem reprehenderit tempore error laboriosam dolores\. Nihil facilis exercitationem minima aperiam praesentium quibusdam ipsum ipsam veniam sapiente\?',
+          date: 1718989108045
+        },
+        {
+          content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam nam aspernatur sed exercitationem reprehenderit tempore error laboriosam dolores\. Nihil facilis exercitationem minima aperiam praesentium quibusdam ipsum ipsam veniam sapiente\?',
+          date: 1718989119958
+        }
+      ]
     };
   },
 });
